@@ -21,3 +21,4 @@ For example, how much does this basket of books cost?
 
   > (4 * 8) - 20% [first book, second book, third book, fourth book] + (4 * 8) - 20% [first book, second book, third book, fifth book] = 25.6 * 2 = 51.20
 
+[More information](http://codingdojo.org/kata/Potter/)
