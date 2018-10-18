@@ -2,6 +2,7 @@ package harrypotter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Basket {
 
@@ -16,11 +17,19 @@ public class Basket {
     }
 
     public String getBasketPrice() {
-        if (products.size() == 2) {
-            Double value = (8 * products.size() * 0.95);
+
+        List<String> differentBooks = products.stream().distinct().collect(Collectors.toList());
+
+        int repeatedBooks = products.size() - differentBooks.size();
+
+        if (differentBooks.size() > 1) {
+            Double value = (8 * differentBooks.size() * (1 - 0.05 * (differentBooks.size() - 1)));
+            Double repeatedBooksPrice = repeatedBooks * 8.0;
+            value = value + repeatedBooksPrice;
             return value.toString();
         } else {
-            return "8";
+            Double value = 8.0 * products.size();
+            return value.toString();
         }
     }
 }
