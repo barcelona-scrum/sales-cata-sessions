@@ -69,7 +69,7 @@ public class DiscountServiceTest {
     }
 
     @Test
-    public void buyThreeaaEqualsBooks_DiscountIsTenPercent() {
+    public void buyThreeBooksTwoEqualOneDifferent_DiscountIsFivePercent() {
         List<String> books = new ArrayList<String>();
         books.add("Book 1");
         books.add("Book 1");
